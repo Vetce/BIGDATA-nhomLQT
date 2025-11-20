@@ -1,8 +1,4 @@
-#!/usr/bin/env python3
-"""
-Script to archive and catalog result folders
-Creates a manifest and optionally sends to external storage
-"""
+
 
 import os
 import json
@@ -30,14 +26,12 @@ ARCHIVE_DIR = '/home/sirin/BIGDATA/archives'
 MANIFEST_DIR = '/home/sirin/BIGDATA/manifests'
 
 def create_directories():
-    """Create archive and manifest directories"""
     os.makedirs(ARCHIVE_DIR, exist_ok=True)
     os.makedirs(MANIFEST_DIR, exist_ok=True)
     logger.info(f"✓ Archive directory: {ARCHIVE_DIR}")
     logger.info(f"✓ Manifest directory: {MANIFEST_DIR}")
 
 def calculate_file_hash(file_path):
-    """Calculate SHA256 hash of file"""
     sha256_hash = hashlib.sha256()
     with open(file_path, "rb") as f:
         for byte_block in iter(lambda: f.read(4096), b""):
@@ -45,7 +39,6 @@ def calculate_file_hash(file_path):
     return sha256_hash.hexdigest()
 
 def create_manifest(folder_name, folder_path):
-    """Create manifest for folder"""
     manifest = {
         'timestamp': datetime.now().isoformat(),
         'folder_name': folder_name,
@@ -81,7 +74,6 @@ def create_manifest(folder_name, folder_path):
     return manifest
 
 def save_manifest(manifest, folder_key):
-    """Save manifest to JSON file"""
     manifest_file = os.path.join(MANIFEST_DIR, f"{folder_key}_manifest_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json")
     with open(manifest_file, 'w') as f:
         json.dump(manifest, f, indent=2)
@@ -89,7 +81,6 @@ def save_manifest(manifest, folder_key):
     return manifest_file
 
 def archive_folder(folder_name, folder_path):
-    """Archive folder to ZIP"""
     archive_name = f"{folder_name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip"
     archive_path = os.path.join(ARCHIVE_DIR, archive_name)
     
@@ -107,7 +98,6 @@ def archive_folder(folder_name, folder_path):
         return None
 
 def create_storage_catalog():
-    """Create catalog of all stored files"""
     catalog = {
         'created': datetime.now().isoformat(),
         'folders': {}
@@ -146,7 +136,6 @@ def create_storage_catalog():
     return catalog_file
 
 def generate_summary_report():
-    """Generate summary report"""
     print("\n" + "="*70)
     print("STORAGE SUMMARY")
     print("="*70)
@@ -164,7 +153,6 @@ def generate_summary_report():
     print("\n" + "="*70)
 
 def main():
-    """Main function"""
     print("\n" + "="*70)
     print("DATA STORAGE AND ARCHIVAL TOOL")
     print("="*70)
