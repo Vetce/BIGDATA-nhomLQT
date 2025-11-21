@@ -89,7 +89,7 @@ and more...
 Cách chạy WEB
 
 
-##  Quick Start (3 Steps)
+##  Quick Start 
 
 ### Make scripts executable
 ```bash
@@ -98,13 +98,13 @@ chmod +x /home/sirin/BIGDATA/file-display-app/install.sh (thay bằng đường 
 
 ```
 
-### 2️⃣ Run setup
+### 2 Run setup
 ```bash
 /home/sirin/BIGDATA/file-display-app/setup.sh (thay bằng đường dẫn trong máy)
 
 ```
 
-### 3️⃣ Start application
+### 3 Start application
 ```bash
 cd /home/sirin/BIGDATA/file-display-app (thay bằng đường dẫn trong máy)
 npm run dev
