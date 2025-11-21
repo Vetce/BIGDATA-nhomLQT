@@ -50,6 +50,7 @@ file-display-app/
 ```bash
 chmod +x /home/sirin/BIGDATA/file-display-app/setup.sh
 chmod +x /home/sirin/BIGDATA/file-display-app/install.sh
+
 ```
 
 ### 2️⃣ Run setup
