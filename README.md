@@ -68,6 +68,8 @@ trực quan hóa và kết quả được export trong mục BIGDATA/Inventory-M
 
 DATA
 
+File báo cáo nằm trong mục BAOCAO.txt
+
 - Optimize delivery routes
 https://huggingface.co/datasets/Cainiao-AI/LaDe
 

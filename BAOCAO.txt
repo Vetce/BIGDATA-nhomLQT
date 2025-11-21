@@ -1,0 +1,418 @@
+Bản txt về báo cáo của nhóm LQT
+
+Môn Bigdata
+
+chủ đề
+
+Optimize delivery routes & Inventory management
+
+Thành viên nhóm:
+1. Nông Phi Long
+2. Chu Thanh Tùng
+3. Phạm Quân
+
+Giảng Viên hướng dẫn:
+Trần Hồng Việt
+Cô
+
+Mở đầu:
+
+Trong bối cảnh thương mại điện tử và logistics phát triển mạnh mẽ, 
+các doanh nghiệp phải đối mặt với áp lực tối ưu hóa quy trình vận chuyển và quản lý tồn kho để giảm chi phí, 
+rút ngắn thời gian giao hàng và nâng cao chất lượng dịch vụ. 
+Tuy nhiên, sự gia tăng nhanh chóng của số lượng đơn hàng, 
+biến động nhu cầu theo thời gian và hạn chế về nguồn lực khiến việc vận hành thủ công trở nên kém hiệu quả và dễ xảy ra sai sót.
+
+Trước thách thức đó, 
+việc ứng dụng các phương pháp phân tích dữ liệu 
+và thuật toán tối ưu hóa vào Delivery Route Optimization và Inventory Management 
+trở thành yếu tố quan trọng giúp doanh nghiệp đạt được hiệu quả vận hành vượt trội.
+ Dự án này được thực hiện nhằm xây dựng mô hình và quy trình tối ưu hóa tuyến đường giao hàng, 
+ đồng thời hỗ trợ quản lý tồn kho thông minh dựa trên dữ liệu thực tế.
+
+Thông qua việc kết hợp các công cụ như HDFS, NFS, OR-Tools, Deep Learning và những kỹ thuật xử lý dữ liệu lớn,
+ nhóm hướng đến việc minh chứng rằng tự động hóa và tối ưu hóa có thể giúp giảm chi phí vận chuyển, 
+ út ngắn thời gian giao hàng, hạn chế thiếu hoặc thừa hàng tồn kho, và nâng cao hiệu quả toàn bộ chuỗi cung ứng. 
+ Báo cáo này trình bày chi tiết các bước thực hiện, từ thu thập – tiền xử lý dữ liệu, xây dựng mô hình, 
+ đến đánh giá hiệu năng và đề xuất hướng cải thiện trong tương lai.
+
+ Mục Lục
+
+1. Giới thiệu
+  Tại sao tối ưu tuyến giao hàng và quán lý tồn kho lại quan trọng?
+  Mục tiêu của dự án
+  Phạm vi của dự án
+
+2. Thu thập và tiền xử lý dữ liệu
+  Nguồn dữ liệu
+  - Optimize delivery routes
+https://huggingface.co/datasets/Cainiao-AI/LaDe
+
+- Inventory management  
+https://data.mendeley.com/datasets/mgzvngzng2/1
+  
+    Tiền xử lý dữ liệu
+    - Xử lý dữ liệu thiếu, lỗi
+    - Chuẩn hóa và mã hóa dữ liệu
+    - Import, đọc và lưu trữ dữ liệu trên HDFS/NFS
+
+3. Các phương pháp được sử dụng
+
+ Hệ thống Bigdata và xử lý phân tán
+ + Hadoop (HDFS, YARN)
+ + NFS
+ + DASK
+
+Xử lý dữ liệu & Deep Learning
+ + Pandas, NumPy: Tiền xử lý và phân tích dữ liệu.
+ + Scikit-learn: Chuẩn hóa dữ liệu, mã hóa, mô hình ML cơ bản.
+ + TensorFlow/Keras: Xây dựng mô hình deep learning (ETA, dự đoán tuyến).
+ + OR-Tools: Tối ưu hóa tuyến đường & bài toán vận tải.
+ + Matplotlib, Jupyter: Phân tích và trực quan hóa.
+ + Sử dụng thêm mô hình học sâu để tối ưu hóa kết quả bài toán
+
+Web Application
+ + Frontend
+ + +React + Material-UI: Xây dựng giao diện, xem file (CSV/JSON/ảnh).
+ + + Axios: Gọi API backend.
+ + Backend
+ + + Node.js + Express: API cung cấp dữ liệu, đọc CSV, trả kết quả cho UI.
+Triển khai
+ + Có thể triển khai Docker & Docker Compose: Chạy frontend + backend trong container.
+
+ 4. Các Module Chính và triển khai
+
+  - Optimize-Delivery
+
+  + Dự đoán ETA, dự đoán tuyến đường, tối ưu tuyến, dự báo nhu cầu.
+  + Công cụ: Jupyter, Pandas, TensorFlow, Dask, OR-Tools.
+  + Dữ liệu: Delivery, Roadmap của 5 thành phố.
+  + Kết quả: CSV, biểu đồ PNG, dự báo.
+
+  - Inventory-Management
+
+  + Phân tích và dự báo tồn kho, xử lý dữ liệu sản phẩm – cửa hàng.
+  + Công cụ: Pandas, Scikit-learn.
+  + Kết quả: CSV, biểu đồ PNG, dự báo.
+
+  - Mô hình học sâu
+  + BIGDATA/OPTIMIZE-FOR-SHIPPER.ipynb
+  + BIGDATA/Inventory-Management-For-Quickresult.ipynb
+
+  - File Display App
+
+  + Giao diện web xem kết quả, file CSV/JSON/PNG/JPG, tải H5/PKL.
+  + Công nghệ: React + MUI, Node.js + Express, Docker.
+
+  - Datapipeline
+
+  + Thu thập dữ liệu, tiền xử lý, lưu trữ trên HDFS/NFS.
+  + Công cụ: Python, Pandas, Dask, HDFS/NFS.
+  + Import và kết hợp dữ liệu
+  + Lưu trữ dữ liệu đã xử lý.
+  + Sử dụng mô hình để tối ưu tuyến giao hàng và quản lý tồn kho.
+  + Lưu kết quả đầu ra.
+  + Xem kết quả đầu ra trên web app
+
+5. Kết quả và đánh giá
+6. Tài liệu tham khảo
+
+
+
+Chương 1. Giới thiệu
+
+1.1 Tại sao tối ưu tuyến giao hàng và quản lý tồn kho lại quan trọng?
+Trong bối cảnh thương mại điện tử và logistics phát triển mạnh mẽ,
+    các doanh nghiệp phải đối mặt với áp lực tối ưu hóa quy trình vận chuyển và quản lý
+    tồn kho để giảm chi phí, rút ngắn thời gian giao hàng và nâng cao chất lượng dịch vụ.
+    Tuy nhiên, sự gia tăng nhanh chóng của số lượng đơn hàng,
+    biến động nhu cầu theo thời gian và hạn chế về nguồn lực khiến việc vận hành thủ
+    công trở nên kém hiệu quả và dễ xảy ra sai sót.
+Trước thách thức đó,
+    việc ứng dụng các phương pháp phân tích dữ liệu và thuật toán tối ưu hóa vào
+    Delivery Route Optimization và Inventory Management trở thành yếu tố quan trọng giúp
+    doanh nghiệp đạt được hiệu quả vận hành vượt trội.
+
+1.2 Mục tiêu của dự án
+Mục tiêu chính của dự án là xây dựng mô hình và quy trình tối ưu hóa tuyến
+    đường giao hàng, đồng thời hỗ trợ quản lý tồn kho thông minh dựa trên dữ liệu thực tế.
+    Cụ thể, dự án nhằm:
+- Giảm chi phí vận chuyển thông qua việc tối ưu hóa lộ trình giao hàng.
+- Rút ngắn thời gian giao hàng để nâng cao trải nghiệm khách hàng.
+- Hạn chế tình trạng thiếu hoặc thừa hàng tồn kho bằng cách dự báo nhu cầu chính xác.
+- Tăng cường hiệu quả toàn bộ chuỗi cung ứng thông qua tự động hóa và tối ưu hóa quy trình.
+
+1.3 Phạm vi của dự án
+Dự án tập trung vào hai lĩnh vực chính:
+- Tối ưu hóa tuyến đường giao hàng (Delivery Route Optimization): Xây dựng mô hình
+    dựa trên dữ liệu giao hàng và bản đồ để xác định lộ trình tối ưu cho các phương tiện vận chuyển.
+- Quản lý tồn kho (Inventory Management): Phân tích dữ liệu tồn kho và dự báo nhu cầu để hỗ trợ quyết định nhập hàng và phân phối.
+
+1.4 Tổng kết 
+Dự án nhằm chứng minh rằng việc ứng dụng các công cụ và kỹ thuật xử lý dữ liệu lớn
+    như HDFS, NFS, OR-Tools, Deep Learning có thể mang lại lợi ích đáng kể trong việc tối ưu hóa
+    quy trình vận chuyển và quản lý tồn kho. Qua đó, giúp doanh nghiệp giảm chi phí,
+    nâng cao hiệu quả vận hành và cải thiện chất lượng dịch vụ khách hàng.
+
+
+
+Chương 2. Thu thập và tiền xử lý dữ liệu
+2.1 Nguồn dữ liệu
+- Optimize delivery routes
+https://huggingface.co/datasets/Cainiao-AI/LaDe 
+- Inventory management
+https://data.mendeley.com/datasets/mgzvngzng2/1
+
+Các dữ liệu được lấy từ các nguồn công khai, bao gồm thông tin về đơn hàng,
+    tuyến đường giao hàng, bản đồ địa lý, dữ liệu tồn kho và lịch sử bán hàng.
+    Cụ thể hơn bộ dữ liệu này là 2 phần tách biệt, tối ưu tuyến giao hàng là dữ liệu lấy từ các thành phố lớn bên Trung Quốc
+    Còn dữ liệu cho phần quản lý tồn kho lấy từ Bangladesh
+
+2.2 Tiền xử lý dữ liệu
+
+2.2.1 Xử lý dữ liệu thiếu, lỗi
+ Điều đáng ngạc nhiên là nguồn dữ liệu thu thập được qua LaDe và Bangladesh gần như không có lỗi hoặc rất ít lỗi
+ Có thể trực tiếp import và sử dụng luôn cho mô hình
+ 
+ Ví dụ file dữ liệu
+ (lấy 1 số ảnh từ file csv trong mục Datapack để làm minh họa)
+
+
+2.2.2 Upload, đọc và lưu trữ dữ liệu trên HDFS/NFS
+Sau khi tiền xử lý, dữ liệu được nhập và lưu trữ trên hệ thống phân tán HDFS hoặc NFS để
+    đảm bảo khả năng mở rộng và truy cập nhanh chóng:
+- Sử dụng các thư viện như Dask để đọc và ghi dữ liệu từ/đến HDFS/NFS.
+- Tổ chức dữ liệu theo cấu trúc thư mục hợp lý để dễ dàng truy xuất và quản lý.
+- Đảm bảo tính bảo mật và sao lưu dữ liệu quan trọng.   
+
+Code cho việc upload dữ liệu lên HDFS/NFS:
+
+BIGDATA/upload_to_hdfs.py
+
+cấu hình shell script để upload dữ liệu lên HDFS/NFS
+BIGDATA/upload_to_hdfs.sh
+
+Sau khi upload dữ liệu lên HDFS/NFS thành công,
+tiếp theo ta có thể sử dụng Dask để đọc dữ liệu từ HDFS/NFS
+
+trước tiên cần có file kiểm tra để đảm bảo dữ liệu trên HDFS có thể sử dụng được
+
+code minh hoạ: BIGDATA/Optimize-Delivery/optimize/check-file.ipynb
+
+ví dụ cấu trúc sau khi kiểm tra
+=== HDFS Directory Structure ===
+
+├── [DIR] Datapack
+    ├── [DIR] Delivery
+        ├── (4.52 MB) delivery_jl.csv
+        ├── (30.07 MB) delivery_yt.csv
+        ├── (138.35 MB) delivery_cq.csv
+        ├── (217.50 MB) delivery_sh.csv
+        ├── (273.60 MB) delivery_hz.csv
+    ├── [DIR] Inventory
+        ├── (4.26 KB) product_info.csv
+        ├── (84.77 MB) product_target_for_shop.csv
+        ├── (111.55 MB) shop_info_with_geo.csv
+    ├── [DIR] PickUp
+        ├── (41.77 MB) pickup_jl.csv
+        ├── (181.38 MB) pickup_yt.csv
+        ├── (181.70 MB) pickup_cq.csv
+        ├── (217.76 MB) pickup_sh.csv
+        ├── (320.26 MB) pickup_hz.csv
+    ├── [DIR] Roadmap
+        ├── (221.01 MB) roads.csv
+├── [DIR] output
+    ├── (1.35 MB) combined_all_data.csv
+
+như vậy đã có thể sử dụng.
+
+Tiếp theo ta có thể sử dụng Dask để đọc dữ liệu từ HDFS/NFS
+
+Code minh hoạ: BIGDATA/Optimize-Delivery/optimize/read-hdfs.ipynb
+
+3. Các phương pháp được sử dụng
+Hệ thống Bigdata và xử lý phân tán
+    + Hadoop (HDFS, YARN) rất phổ biến trong việc lưu trữ và xử lý dữ liệu lớn, cung cấp khả năng mở rộng và độ tin cậy cao, 
+    đồng thời hỗ trợ xử lý song song thông qua mô hình MapReduce, giúp tăng tốc độ xử lý dữ liệu. cùng khả năng chịu lỗi tốt.
+
+    + Kiến trúc của HDFS bao gồm các thành phần chính như NameNode (quản lý hệ thống tệp), DataNode (lưu trữ dữ liệu),
+     và Secondary NameNode (hỗ trợ sao lưu và phục hồi).
+
+    + NFS (Network File System) cho phép chia sẻ tệp tin qua mạng,
+    giúp các hệ thống và ứng dụng có thể truy cập dữ liệu một cách dễ dàng và hiệu quả.
+
+    + cấu hình setup NFS cho máy chủ
+    BIGDATA/set_up_NFS.py
+    BIGDATA/NFS.md
+    BIGDATA/mount_nfs_archives.sh
+
+
+    + DASK là một thư viện mã nguồn mở trong Python, cung cấp khả năng xử lý dữ liệu phân tán và song song,
+    giúp mở rộng các thao tác trên dữ liệu lớn vượt quá khả năng của bộ nhớ máy tính cá nhân.
+
+Xử lý dữ liệu & Deep Learning
+    + Pandas, NumPy: Các thư viện này được sử dụng để tiền xử lý và
+    phân tích dữ liệu, cung cấp các công cụ mạnh mẽ để thao tác với dữ liệu dạng bảng và mảng.
+    + Scikit-learn: Thư viện này hỗ trợ chuẩn hóa dữ liệu, mã hóa và xây dựng các mô hình máy học cơ bản.
+    + TensorFlow/Keras: Được sử dụng để xây dựng các mô hình deep learning
+    nhằm dự đoán ETA và tuyến đường giao hàng.
+    + OR-Tools: Thư viện tối ưu hóa của Google, được sử dụng để tối ưu hóa tuyến đường và giải quyết các bài toán vận tải phức tạp.
+    + Matplotlib, Jupyter: Các công cụ này hỗ trợ phân tích và trực quan hóa dữ liệu
+
+Web Application
+    + Frontend
+        +React + Material-UI: Được sử dụng để xây dựng giao diện người dùng
+        + Axios: Thư viện này giúp gọi API từ backend để lấy dữ liệu và hiển thị trên giao diện.
+    + Backend
+        + Node.js + Express: Được sử dụng để xây dựng API cung cấp dữ liệu
+        , đọc file CSV và trả kết quả cho frontend.
+Triển khai web
+    + Docker & Docker Compose: Được sử dụng để đóng gói và triển khai ứng
+    dụng frontend và backend trong các container, giúp dễ dàng quản lý và triển khai trên các môi trường khác nhau.
+
+4. Các Module Chính và triển khai
+- Optimize-Delivery
+    + Dự đoán ETA, dự đoán tuyến đường, tối ưu tuyến, dự báo nhu cầu, sử dụng thư viện OR-Tools của Google để giải quyết bài toán tối ưu hóa tuyến đường giao hàng phức tạp.
+    + Công cụ: Jupyter, Pandas, TensorFlow, Dask, OR-Tools.
+    + Dữ liệu: Delivery, Roadmap của 5 thành phố.
+    + Kết quả: CSV, biểu đồ PNG, dự báo.
+
+    + code minh hoạ:
+    Optimize-Delivery/optimize/ETA-predict.ipynb
+    Optimize-Delivery/optimize/Route-predict.ipynb
+    Optimize-Delivery/optimize/STG-forecasting.ipynb
+
+    + Kết quả:
+    lấy vài ảnh từ thư mục BIGDATA/Optimize-Delivery/optimize/result và dữ liệu từ các file trong thư mục đó để làm minh họa.
+
+- Inventory-Management
+    + Phân tích và dự báo tồn kho, xử lý dữ liệu sản phẩm – cửa hàng.
+    + Công cụ: Pandas, Scikit-learn.
+    + Kết quả: CSV, biểu đồ PNG, dự báo.
+
+    + code minh hoạ:
+    Inventory-Management/inventory/inventory-analysis.ipynb
+    Inventory-Management/inventory/inventory-forecasting.ipynb
+
+    + Kết quả:
+    lấy vài ảnh từ thư mục BIGDATA/Inventory-Management/inventory/result và dữ liệu
+    từ các file trong thư mục đó để làm minh họa.
+
+- Mô hình học sâu cho optimize delivery routes
+    + Sử dụng TensorFlow/Keras để xây dựng mô hình deep learning nhằm dự đoán ETA và tuyến đường giao hàng qua bộ dữ liệu tổng hợp
+    + Code minh hoạ:
+
+    BIGDATA/OPTIMIZE-FOR-SHIPPER.ipynb
+    
+    + Kết quả trong thư mục:
+
+    BIGDATA/quick-result, tải lên và đánh giá thêm
+
+- Mô hình học sâu cho Inventory-management
+    + + Sử dụng TensorFlow/Keras để xây dựng mô hình deep learning nhằm xử lý tồn kho
+    + Code minh hoạ:
+
+    BIGDATA/Inventory-Management-For-Quickresult.ipynb
+
+    + Kết quả trong thư mục:
+
+     BIGDATA/ML-result-for-inventory-management, tải lên và đánh giá thêm
+
+- File Display App
+
+    + Giao diện web xem kết quả, file CSV/JSON/PNG/JPG, và tải file.
+
+    + Công nghệ: React + MUI, Node.js + Express, Docker.
+
+    + Code minh hoạ:
+
+    File-Display-App/frontend/
+    File-Display-App/backend/
+
+    + Kết quả:
+    Sau khi chạy thì chụp ảnh minh họa web
+
+
+- Datapipeline
+    + Thu thập dữ liệu, tiền xử lý, lưu trữ trên HDFS/N
+    + Công cụ: Python, Pandas, Dask, HDFS/NFS.
+    + Import và kết hợp dữ liệu
+    + Lưu trữ dữ liệu đã xử lý.
+    + Sử dụng mô hình để tối ưu tuyến giao hàng và quản lý tồn kho.
+    + Lưu kết quả đầu ra.
+    + Xem kết quả đầu ra trên web app
+
+
+
+5. Kết quả và đánh giá
+ - Tóm tắt kết quả đạt được từ việc tối ưu hóa tuyến giao hàng
+    tải ảnh lên pdf trong mục  BIGDATA/Optimize-Delivery/optimize/result và đánh giá sơ bộ
+
+    Nhìn chung, việc tối ưu hóa tuyến giao hàng đã mang lại những cải thiện tương về hiệu suất vận chuyển,
+    giảm chi phí và nâng cao trải nghiệm khách hàng. Tuy nhiên, vẫn còn một số thách thức cần giải quyết trong tương lai,
+    bao gồm việc xử lý dữ liệu thời gian thực, tích hợp với các hệ thống hiện có và mở rộng mô hình để áp dụng cho các khu vực địa lý khác nhau.
+
+
+- Tóm tắt kết quả đạt được từ việc quản lý tồn kho
+    tải ảnh lên pdf trong mục  BIGDATA/Inventory-Management/inventory/result và đánh giá sơ bộ
+
+    Việc quản lý tồn kho đã giúp cải thiện độ chính xác trong dự báo nhu cầu,
+    giảm thiểu tình trạng thiếu hoặc thừa hàng tồn kho, và tối ưu hóa quy trình nhập hàng và phân phối.
+    Tuy nhiên, vẫn cần tiếp tục cải thiện mô hình dự báo 
+    và tích hợp các yếu tố bên ngoài như xu hướng thị trường và hành vi khách hàng để 
+    nâng cao hiệu quả quản lý tồn kho trong tương lai.
+
+- Tóm tắt kết quả đạt được từ việc trực quan hóa
+    trực quan hóa giúp dữ liệu được đánh giá 1 cách chính xác và có cái nhìn tổng quát về hiệu năng của mô hình
+    đồng thời triển khai web để xem dữ liệu là 1 cách hiệu quả để tóm tắt kết quả đạt được trong dự án
+
+- Tóm tắt thành tựu nhóm đã đạt được
+    Nhóm đã thành công trong việc xây dựng và triển khai các mô hình tối ưu hóa tuyến giao hàng và quản lý tồn kho,
+    sử dụng các công cụ và kỹ thuật xử lý dữ liệu lớn như HDFS, NFS, Dask, cùng với các mô hình deep learning.
+    Ngoài ra, nhóm cũng đã phát triển một ứng dụng web để trực quan hóa và truy cập kết quả một cách dễ dàng.
+
+
+- Ý nghĩa của việc sử dụng Big Data và Deep Learning trong dự án
+    Việc áp dụng các công cụ và kỹ thuật xử lý dữ liệu lớn như HDFS, NFS, Dask,
+    cùng với các mô hình deep learning đã chứng minh hiệu quả trong việc tối ưu hóa quy trình vận chuyển và quản lý tồn kho.
+    Điều này không chỉ giúp giảm chi phí và nâng cao hiệu quả vận hành,
+    mà còn mở ra cơ hội ứng dụng rộng rãi các giải pháp công nghệ tiên tiến trong lĩnh vực logistics và chuỗi cung ứng.
+
+- Ý nghĩa trong thực tiễn 
+    Dự án đã chứng minh rằng việc ứng dụng các công cụ và kỹ thuật xử lý dữ liệu lớn
+    cùng với các mô hình deep learning có thể mang lại lợi ích đáng kể trong việc tối ưu hóa quy trình vận chuyển và quản lý tồn kho.
+    Điều này không chỉ giúp giảm chi phí, nâng cao hiệu quả vận hành mà còn cải thiện chất lượng dịch vụ khách hàng.
+    Qua đó, mở ra cơ hội ứng dụng rộng rãi các giải pháp công nghệ tiên tiến trong lĩnh vực logistics và chuỗi cung ứng,
+    góp phần thúc đẩy sự phát triển bền vững của ngành công nghiệp này trong tương lai.
+
+- Thách thức và hạn chế 
+    Trong quá trình thực hiện dự án, nhóm đã gặp phải một số thách thức và hạn chế như:
+    - Xử lý dữ liệu lớn: Việc quản lý và xử lý khối lượng lớn dữ liệu đòi hỏi sự hiểu biết sâu sắc về các công cụ Big Data như HDFS, NFS và Dask.
+    - Tối ưu hóa mô hình: Việc xây dựng và tinh chỉnh các mô hình deep learning để đạt hiệu suất cao nhất là một quá trình phức tạp và tốn thời gian.
+    - Tích hợp hệ thống: Việc tích hợp các mô hình và quy trình vào hệ thống hiện có của doanh nghiệp đòi hỏi sự phối hợp chặt chẽ giữa các bộ phận khác nhau.
+    - Giới hạn về thời gian và nguồn lực: Dự án bị giới hạn bởi thời gian và nguồn lực, điều này ảnh hưởng đến khả năng mở rộng và hoàn thiện các giải pháp đề xuất.
+
+- Phương hướng phát triển trong tương lai
+    Dựa trên những kết quả đạt được và các thách thức đã gặp phải,
+    nhóm đề xuất một số phương hướng phát triển trong tương lai như sau:
+    - Nâng cao khả năng xử lý dữ liệu thời gian thực: Phát triển các giải pháp để xử lý và phân tích dữ liệu thời gian thực nhằm cải thiện hiệu suất vận hành.
+    - Mở rộng mô hình tối ưu hóa: Nghiên cứu và áp dụng các thuật toán tối ưu hóa mới để nâng cao hiệu quả của các mô hình hiện có.
+    - Tích hợp công nghệ mới: Khám phá việc sử dụng các công nghệ mới như trí tuệ nhân tạo (AI) và Internet of Things (IoT) để cải thiện quy trình vận chuyển và quản lý tồn kho.
+    - Đào tạo và nâng cao kỹ năng: Tăng cường đào tạo cho đội ngũ nhân viên về các công cụ và kỹ thuật xử lý dữ liệu lớn để đảm bảo sự thành công của các dự án trong tương lai.
+    - Mở rộng phạm vi ứng dụng: Áp dụng các giải pháp đã phát triển vào các lĩnh vực khác nhau trong chuỗi cung ứng để tận dụng tối đa lợi ích từ việc tối ưu hóa quy trình.
+
+6. Tài liệu tham khảo
+- https://huggingface.co/datasets/Cainiao-AI/LaDe
+- https://data.mendeley.com/datasets/mgzvngzng2/1
+
+
+
+
+
+
+
+
+
+
+
+
