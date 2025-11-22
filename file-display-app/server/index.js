@@ -15,19 +15,19 @@ app.use(express.json());
 const DIRECTORIES = [
   {
     name: 'quick-result',
-    path: '/home/sirin/BIGDATA/quick-result',
+    path: 'd:\\fileht_bigdata\\BIGDATA-nhomLQT\\quick-result',
   },
   {
     name: 'Optimize-Delivery Results',
-    path: '/home/sirin/BIGDATA/Optimize-Delivery/optimize/result',
+    path: 'd:\\fileht_bigdata\\BIGDATA-nhomLQT\\Optimize-Delivery\\optimize\\result',
   },
   {
     name: 'Inventory-Management Results',
-    path: '/home/sirin/BIGDATA/Inventory-Management/result',
+    path: 'd:\\fileht_bigdata\\BIGDATA-nhomLQT\\Inventory-Management\\result',
   },
   {
     name: 'ML-result-for-inventory-management',
-    path: '/home/sirin/BIGDATA/ML-result-for-inventory-management',
+    path: 'd:\\fileht_bigdata\\BIGDATA-nhomLQT\\ML-result-for-inventory-management',
   },
 ];
 

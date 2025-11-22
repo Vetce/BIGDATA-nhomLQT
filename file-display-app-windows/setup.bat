@@ -23,7 +23,8 @@ npm -v
 echo.
 
 REM Set the app directory (adjust this path for Windows)
-set APP_DIR=%~dp0..\file-display-app
+for %%I in ("%~dp0..\") do set PARENT_DIR=%%~fI
+set APP_DIR=%PARENT_DIR%\file-display-app
 echo [INFO] Application directory: %APP_DIR%
 echo.
 

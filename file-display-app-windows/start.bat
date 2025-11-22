@@ -7,17 +7,30 @@ echo   Starting BIGDATA File Display App
 echo ===============================================================
 echo.
 
-set APP_DIR=%~dp0..\file-display-app
+REM Get the path to the parent directory
+for %%I in ("%~dp0..") do set PARENT_DIR=%%~fI
+set APP_DIR=%PARENT_DIR%\file-display-app
+
+echo [INFO] Application directory: %APP_DIR%
+echo.
+
+REM Check if app directory exists
+if not exist "%APP_DIR%" (
+    echo [ERROR] Could not find application directory: %APP_DIR%
+    echo Please make sure the file-display-app folder exists in the parent directory.
+    pause
+    exit /b 1
+)
 
 REM Start backend in a new window
-echo [INFO] Starting backend server...
-start "BIGDATA Backend" cmd /k "cd /d %APP_DIR%\server && npm start"
+echo [INFO] Starting backend server on http://localhost:5000...
+start "BIGDATA Backend Server" cmd /k "cd /d "%APP_DIR%\server" && node index.js"
 
-REM Wait a moment for backend to initialize
-timeout /t 3 /nobreak >nul
+REM Wait for backend to start
+timeout /t 5 /nobreak >nul
 
 REM Start frontend
-echo [INFO] Starting frontend application...
+echo [INFO] Starting frontend application on http://localhost:3000...
 cd /d "%APP_DIR%"
 npm start
 

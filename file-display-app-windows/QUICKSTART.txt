@@ -6,30 +6,62 @@ PREREQUISITES:
   ✓ Node.js 14+ must be installed
   ✓ Download from: https://nodejs.org
 
-INSTALLATION:
-  1. Double-click: setup.bat
-  2. Wait for installation to complete
+QUICK SETUP (3 Steps):
+  
+  STEP 1: Run diagnostics (optional)
+  ► Double-click: diagnose.bat
+    (This checks if everything is set up correctly)
 
-RUNNING THE APP:
+  STEP 2: Install dependencies
+  ► Double-click: setup.bat
+    (Only needed once, or after updating files)
+
+  STEP 3: Start the app
   ► Double-click: start.bat
   
   OR run separately:
   ► start-backend.bat (in one window)
   ► start-frontend.bat (in another window)
 
-ACCESS:
+ACCESS THE APP:
   ► Frontend: http://localhost:3000
   ► Backend:  http://localhost:5000
 
+IMPORTANT NOTES:
+  • Wait 5-10 seconds after starting for the app to load
+  • Both backend (port 5000) and frontend (port 3000) must be running
+  • If ports are busy, close other applications using those ports
+  • The app scans these directories:
+    - quick-result/
+    - Optimize-Delivery/optimize/result/
+    - Inventory-Management/result/
+    - ML-result-for-inventory-management/
+
 TROUBLESHOOTING:
-  • If "Node.js not found" → Install Node.js and restart
-  • If ports busy → Close other apps on ports 3000/5000
-  • If setup fails → Run Command Prompt as Administrator
+
+  Error: "Node.js not found"
+  → Install Node.js from https://nodejs.org and restart
+
+  Error: "Could not find directory"
+  → Verify the file-display-app folder exists in the parent directory
+
+  Error: "Address already in use"
+  → Close other applications using ports 3000 or 5000
+  → Or restart your computer
+
+  App won't load in browser
+  → Wait longer (10+ seconds) for React to compile
+  → Check that BOTH backend and frontend windows show "running"
+  → Run diagnose.bat to check your setup
 
 FOLDER STRUCTURE:
   file-display-app-windows/   ← You are here (Windows scripts)
-  file-display-app/            ← Main application folder
+  file-display-app/           ← Main application folder
+    ├── server/               ← Backend API (Node.js + Express)
+    ├── src/                  ← Frontend (React)
+    ├── public/               ← Static files
+    └── package.json          ← Dependencies
 
 ═══════════════════════════════════════════════════════════════════
 
-Questions? See README.md for detailed documentation.
+For more help, see README.md
