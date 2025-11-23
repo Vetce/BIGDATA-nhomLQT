@@ -9,7 +9,6 @@ Thành viên nhóm:
 
 Optimize delivery routes & Inventory management (Xây dựng hệ thống tối ưu tuyến giao hàng và quản lý tồn kho)
 
-![LaDe](Datapack/Image/LaDe.png)
 
 # Cách hoạt động:
 
