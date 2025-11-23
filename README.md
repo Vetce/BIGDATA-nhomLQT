@@ -2,7 +2,12 @@
 
 # Môn Bigdata
 
-# Chủ đề:\
+Thành viên nhóm:
+1. Nông Phi Long
+2. Chu Thanh Tùng
+3. Phạm Quân
+
+# Chủ đề:
 
 Optimize delivery routes & Inventory management
 
