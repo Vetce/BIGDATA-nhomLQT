@@ -1,15 +1,15 @@
-BTL nhóm 7
+# BTL nhóm 7
 
-Môn Bigdata
+# Môn Bigdata
 
-Chủ đề:
+# Chủ đề:\
 
 Optimize delivery routes & Inventory management
 
-Mục tiêu:
+# Mục tiêu:
 - Xây dựng hệ thống tối ưu tuyến giao hàng và quản lý tồn kho
 
-Cách hoạt động:
+# Cách hoạt động:
 
 !!!! SETUP NFS
 /
