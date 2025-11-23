@@ -16,14 +16,14 @@ Optimize delivery routes & Inventory management
 
 # Cách hoạt động:
 
-!!!! SETUP NFS
+# !!!! SETUP NFS
 /
 với máy khác làm theo trong mục BIGDATA/ForOtherNFS
 /
 với máy chính chạy BIGDATA/set_up_NFS.py
 và làm theo BIGDATA/NFS.md
 
-!!!YÊU CẦu
+# !!!YÊU CẦu
 
 đầu tiên setup đảm bào tạo môi trường ảo trước .venv (BIGDATA/.venv) để tránh xung đột file
 
@@ -38,6 +38,8 @@ start-yarn.sh
 
 
 !!!!!Sau đó làm theo các mục dưới đây
+
+# Optimize delivery routes
 
 1. Optimize delivery routes ( tối ưu tuyến giao hàng)
 
@@ -65,8 +67,9 @@ BIGDATA/Optimize-Delivery/optimize/STG-forecasting.ipynb
 - sau đó xem kết quả và đánh giá ở 
 BIGDATA/Optimize-Delivery/optimize/result
 
+#  Inventory Management 
 
-2. Inventory Management 
+2. Inventory Management  (quản lý tồn kho)
 
 - đảm bảo mục BIGDATA/upload_to_hdfs.py đã được chạy theo bước trên, thì vào việc
 
@@ -78,15 +81,17 @@ BIGDATA/Optimize-Delivery/optimize/result
 trực quan hóa và kết quả được export trong mục BIGDATA/Inventory-Management/result
 
 
-3. OPTIONAL
+# OPTIONAL
 - có thẻ chạy file Inventory-Management-For-Quickresult.ipynb cho mô hình DL quản lý tồn kho, kết quả nằm ở BIGDATA/ML-result-for-inventory-management
 - Có thể chạy file OPTIMIZE-FOR-SHIPPER.ipynb để thử chạy mô hình DL cho tối ưu tuyến giao hàng, kết quả nằm ở
 BIGDATA/quick-result
 
 
-DATA
+# File báo cáo bao gồm
+báo cáo.pdf
+BAOCAO.txt
 
-File báo cáo nằm trong mục BAOCAO.txt
+# DATA
 
 - Optimize delivery routes
 https://huggingface.co/datasets/Cainiao-AI/LaDe
@@ -94,7 +99,7 @@ https://huggingface.co/datasets/Cainiao-AI/LaDe
 - Inventory management  
 https://data.mendeley.com/datasets/mgzvngzng2/1
 
-Technologies
+# Technologies
 HDFS for storage 
 ML
 NFS
@@ -106,13 +111,13 @@ and more...
 
 
 
-Cách chạy WEB cho LINUX
+# Cách chạy WEB cho LINUX
 vào mục BIGDATA/file-display-app làm theo quick start
 
-Với windows
+# Cách chạy WEB cho Windows
 vào thư mục BIGDATA/file-display-app-windows và làm theo quickstart.md
 
-
+# NFS
 thư mục BIGDATA/archives là sau khi đóng gói kết quả đạt được qua chạy file 
 BIGDATA/archive_results.py
 và thư mục archives được lưu và setup NFS từ máy của nhóm trưởng, các thành viên khác có thể mount lại qua setup NFS để lấy dữ liệu qua server mạng, đây là hình thức lưu trữ kết quả thay cho Kafka
