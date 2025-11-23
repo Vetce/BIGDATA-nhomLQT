@@ -138,9 +138,7 @@ def create_storage_catalog():
     return catalog_file
 
 def generate_summary_report():
-    print("\n" + "="*70)
     print("STORAGE SUMMARY")
-    print("="*70)
     
     for folder_key, folder_path in FOLDERS.items():
         files = os.listdir(folder_path) if os.path.exists(folder_path) else []
