@@ -312,7 +312,7 @@ docker-compose up --build
 
 ---
 
-## 🎓 Learning Resources
+##  Learning Resources
 
 ### React
 - https://react.dev
@@ -328,7 +328,7 @@ docker-compose up --build
 
 ---
 
-## 📝 File Conventions
+##  File Conventions
 
 | File | Purpose |
 |------|---------|
@@ -342,7 +342,7 @@ docker-compose up --build
 
 ---
 
-## ✅ Verification Checklist
+##  Verification Checklist
 
 - [x] React components created
 - [x] Material-UI integrated
@@ -357,9 +357,9 @@ docker-compose up --build
 
 ---
 
-## 🎉 Ready to Go!
+##  Ready to Go!
 
-Your BIGDATA File Display App is ready to use!
+
 
 ```bash
 cd /home/sirin/BIGDATA/file-display-app

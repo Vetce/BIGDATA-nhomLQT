@@ -37,7 +37,6 @@ ls -la /mnt/archives
 
 
 
-
 7/
 sudo exportfs -ra
 sudo exportfs -v   # kiểm tra export
