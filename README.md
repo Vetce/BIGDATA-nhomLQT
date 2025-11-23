@@ -91,23 +91,20 @@ Cách chạy WEB cho LINUX
 
 
 ##  Quick Start 
-
 Make scripts executable
 ```bash
-chmod +x /home/sirin/BIGDATA/file-display-app/setup.sh (thay bằng đường dẫn trong máy)
-chmod +x /home/sirin/BIGDATA/file-display-app/install.sh (thay bằng đường dẫn trong máy)
+chmod +x /path/to/BIGDATA/file-display-app/setup.sh (thay bằng đường dẫn trong máy)
+chmod +x /path/to/BIGDATA/file-display-app/install.sh (thay bằng đường dẫn trong máy)
 
 ```
-
 Run setup
 ```bash
 /home/sirin/BIGDATA/file-display-app/setup.sh (thay bằng đường dẫn trong máy)
 
 ```
-
 3 Start application
 ```bash
-cd /home/sirin/BIGDATA/file-display-app (thay bằng đường dẫn trong máy)
+cd /path/to/BIGDATA/file-display-app (thay bằng đường dẫn trong máy)
 npm run dev
 ```
 
